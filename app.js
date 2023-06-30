@@ -1,7 +1,7 @@
 import express from "express";
 import dotenv from "dotenv";
 import { connectPassport } from "./utils/provider.js";
-import session from "express-session";
+import session from "cookie-session";
 import cookieParser from "cookie-parser";
 import errorMiddleware from "./middlewares/errorMiddleware.js";
 import cors from "cors";
