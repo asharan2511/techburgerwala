@@ -1,7 +1,7 @@
 import express from "express";
 import dotenv from "dotenv";
 import { connectPassport } from "./utils/provider.js";
-import session from "cookie-session";
+import session from "express-session";
 import cookieParser from "cookie-parser";
 import errorMiddleware from "./middlewares/errorMiddleware.js";
 import cors from "cors";
@@ -13,8 +13,9 @@ export default app;
 //using middlewares
 app.use(
   session({
-    name: "session",
-    keys: [process.env.SESSION_SECRETE],
+    secret: process.env.SESSION_SECRETE,
+    resave: false,
+    saveUninitialized: false,
     cookie: {
       secure: process.env.NODE_ENV === "development" ? false : true,
       httpOnly: process.env.NODE_ENV === "development" ? false : true,
