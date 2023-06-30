@@ -13,9 +13,8 @@ export default app;
 //using middlewares
 app.use(
   session({
-    secret: process.env.SESSION_SECRETE,
-    resave: false,
-    saveUninitialized: false,
+    name: "session",
+    keys: [process.env.SESSION_SECRETE],
     cookie: {
       secure: process.env.NODE_ENV === "development" ? false : true,
       httpOnly: process.env.NODE_ENV === "development" ? false : true,
