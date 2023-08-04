@@ -111,6 +111,7 @@ const myorder = asynchandler(async (req, res, next) => {
 
 const getOrderDetails = asynchandler(async (req, res, next) => {
   const order = await Order.findById(req.params.id).populate("user", "name");
+  console.log(order);
   if (!order) {
     return next(new Errorhandler("Invalid Order Id", 404));
   }
