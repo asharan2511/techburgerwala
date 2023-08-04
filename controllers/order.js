@@ -110,7 +110,7 @@ const myorder = asynchandler(async (req, res, next) => {
 });
 
 const getOrderDetails = asynchandler(async (req, res, next) => {
-  const order = await Order.findById(req.params._id).populate("user", "name");
+  const order = await Order.findById(req.params.id).populate("user", "name");
   if (!order) {
     return next(new Errorhandler("Invalid Order Id", 404));
   }
@@ -124,7 +124,7 @@ const getAdminOrders = asynchandler(async (req, res, next) => {
 
 const processOrders = asynchandler(async (req, res, next) => {
   console.log("hello");
-  const order = await Order.findById(req.params._id);
+  const order = await Order.findById(req.params.id);
 
   if (!order) {
     return next(new Errorhandler("Invalid Order Id", 404));
