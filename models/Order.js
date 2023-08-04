@@ -60,7 +60,7 @@ const orderSchema = new mongoose.Schema({
     },
   },
   user: {
-    type: mongoose.Schema.ObjectId,
+    type: mongoose.Schema.Types.ObjectId,
     ref: "User",
     required: true,
   },
@@ -70,7 +70,7 @@ const orderSchema = new mongoose.Schema({
     default: "COD",
   },
   paymentInfo: {
-    type: mongoose.Schema.ObjectId,
+    type: mongoose.Schema.Types.ObjectId,
     ref: "payment",
   },
   paidAt: Date,
