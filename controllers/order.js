@@ -28,7 +28,9 @@ const createOrder = asynchandler(async (req, res, next) => {
   };
 
   await Order.create(order);
-  res.status(200).json({ success: true, message: true });
+  res
+    .status(200)
+    .json({ success: true, message: "Order placed successfully!" });
 });
 
 const createOrderOnline = asynchandler(async (req, res, next) => {
