@@ -41,6 +41,7 @@ const getAdminStats = asyncHandler(async (req, res, next) => {
       shipped: shippedOrders.length,
       delivered: deliveredOrders.length,
     },
+    totalIncome,
   });
 });
 
