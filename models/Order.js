@@ -60,8 +60,8 @@ const orderSchema = new mongoose.Schema({
     },
   },
   user: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: "user",
+    type: mongoose.Schema.ObjectId,
+    ref: "User",
     required: true,
   },
   payment: {
